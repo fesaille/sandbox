@@ -8,7 +8,7 @@ As with git:
 # Remove stats usage
 dvc config --global core.analytics false
 
-# Init DVC 
+# Init DVC
 dvc init
 
 # Print DVC status
@@ -19,7 +19,7 @@ dvc status
 
 A S3 sandbox can be generated with:
 ```bash
-# Generate id and secret access key 
+# Generate id and secret access key
 aws_access_key_id=dvc_user
 aws_secret_access_key=$(openssl rand --hex 64)
 
@@ -39,7 +39,7 @@ docker run --rm -d -p 9000:9000 \
     minio/minio server /data
 
 # Configure the minio client
-bash -c " 
+bash -c "
   echo -e \"${aws_access_key_id}\\n${aws_secret_access_key}\" | \
       mc config host add dvc http://localhost:9000 \
       --api \"S3v4\"
@@ -54,3 +54,11 @@ dvc remote add -fd minio s3://dvc
 dvc remote modify minio profile dvc
 dvc remote modify minio endpoint url http://localhost:9000
 ```
+
+## DVC files
+
+Placeholders <badge-doc href="https://dvc.org/doc/user-guide/dvc-files-and-directories"></badge-doc> to track data files and directories, are added when using data related commands: `dvc add`, `dvc import`, or `dvc import-url`
+
+| Fields | Mandatory | Decription                                                                                       |
+|--------|:---------:|--------------------------------------------------------------------------------------------------|
+| `outs` |     ✓     | List of output entries (details below) that represent the files or directories tracked with DVC. |
