@@ -1,0 +1,36 @@
+urls:
+  indicateurs:
+    url_web: "https://www.data.gouv.fr/fr/datasets/indicateurs-de-suivi-de-lepidemie-de-covid-19"
+    url_stable: "https://www.data.gouv.fr/fr/datasets/r/4acad602-d8b1-4516-bc71-7d5574d5f33e"
+    url_api: "https://www.data.gouv.fr/api/1/datasets/5ee9df5003284f565d561278"
+    titre: "Indicateurs de suivi de l'épidémie de COVID-19"
+    file_pattern: "indicateurs-covid19-dep"
+    delim: ","
+  tests_positivite:
+    url_web: "https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-resultats-des-tests-virologiques-covid-19/"
+    url_stable: "https://www.data.gouv.fr/fr/datasets/r/406c6a23-e283-4300-9484-54e78c8ae675"
+    url_api: "https://www.data.gouv.fr/api/1/datasets/5ed117db6c161bd5baf070be"
+    titre: "Données relatives aux résultats des tests virologiques COVID-19 SI-DEP"
+    file_pattern: "sp-pos-quot-dep"
+    delim: ";"
+  tests_capacites:
+    url_web: "https://www.data.gouv.fr/fr/datasets/capacite-analytique-de-tests-virologiques-dans-le-cadre-de-lepidemie-covid-19/"
+    url_stable: "https://www.data.gouv.fr/fr/datasets/r/0c230dc3-2d51-4f17-be97-aa9938564b39"
+    url_api: "https://www.data.gouv.fr/api/1/datasets/5ed11705afd28672e40fbc2f/"
+    titre: "Capacité analytique de tests virologiques dans le cadre de l'épidémie COVID-19 SI-DEP"
+    file_pattern: "sp-capa-quot-dep"
+    delim: ";"
+  incidence:
+    url_web: "https://www.data.gouv.fr/fr/datasets/taux-dincidence-de-lepidemie-de-covid-19/"
+    url_stable: "https://www.data.gouv.fr/fr/datasets/r/19a91d64-3cd3-42fc-9943-d635491a4d76"
+    url_api: "https://www.data.gouv.fr/api/1/datasets/5ed1175ca00bbe1e4941a46a"
+    titre: "Taux d'incidence de l'épidémie de COVID-19 SI-DEP"
+    file_pattern: "sp-pe-tb-quot-dep"
+    delim: ";"
+  sursaud:
+    url_web: "https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/"
+    url_stable: "https://www.data.gouv.fr/fr/datasets/r/eceb9fb4-3ebc-4da3-828d-f5939712600a"
+    url_api: "https://www.data.gouv.fr/api/1/datasets/5e74ecf52eb7514f2d3b8845"
+    titre: "Données des urgences hospitalières et de SOS médecins relatives à l'épidémie de COVID-19"
+    file_pattern: "sursaud-corona-quot-dep"
+    delim: ";"
