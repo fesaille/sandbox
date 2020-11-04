@@ -15,6 +15,8 @@ include = [ ]
 python = ">=3.6.1,<4.0"
 dvc = {extras = ["all"], version = "^1.9.1"}
 bs4 = "^0.0.1"
+python-language-server = "^0.35.1"
+prospector = "^1.3.1"
 
 [tool.poetry.dev-dependencies]
 bandit = "*"
@@ -30,10 +32,10 @@ watermark = "*"
 autopep8 = "^1.5.4"
 
 [tool.black]
-line-length = 120
+line-length = 80
 
 [tool.isort]
-line_length = 120
+line_length = 80
 multi_line_output = 3
 force_single_line = false
 balanced_wrapping = true
@@ -54,4 +56,4 @@ disable = """
   too-many-statements,
   unused-import
 """
-max-line-length = "120"
+max-line-length = "80"
