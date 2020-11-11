@@ -1,0 +1,21 @@
+1604559873820	geckodriver	INFO	Listening on 127.0.0.1:40323
+1604559873838	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileAN9xwg"
+
+(firefox:19205): Gtk-WARNING **: 08:04:34.530: Theme directory panel/22-light of theme Mojave-CT-Light has no size field
+
+
+(firefox:19205): Gtk-WARNING **: 08:04:34.530: Theme directory panel/16 of theme Mojave-CT-Light has no size field
+
+1604559876066	Marionette	INFO	Listening on port 40095
+1604559876146	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+JavaScript error: https://www.lemonde.fr/football/article/2020/11/05/ligue-des-champions-le-psg-sombre-a-leipzig_6058530_1616938.html, line 16: TypeError: document.querySelector(...) is null
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1604560295584	Marionette	INFO	Stopped listening on port 40095
