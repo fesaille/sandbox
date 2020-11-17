@@ -1,0 +1,8 @@
+.vagrant
+private
+credent.json
+*.jar
+vss*.json*
+*.log
+bosch-iot-hub-device-registry.yml
+invicl

@@ -5,13 +5,13 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/bionic64"
 
   # config.vm.box_check_update = false
-  # config.vm.network "forwarded_port", guest: 22, host: 2222
-  # config.vm.network "forwarded_port", guest: 8090, host: 8090
+  config.vm.network "forwarded_port", guest: 22, host: 2222
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 8090, host: 8090
+  #, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -104,12 +104,9 @@ Vagrant.configure("2") do |config|
     # Generate modules.dep and map files (to be found by modprobe)
     depmod
     cd $HOME
+  SHELL
 
-    # Load vcan module and bind a virtual can to vcan0
-    # https://stackoverflow.com/a/21040212
-    modprobe vcan
-    ip link add dev vcan0 type vcan
-    ip link set up vcan0
+  config.vm.provision "shell", inline: <<-SHELL
 
     [ -d /kuksa ] || mkdir /kuksa
 
@@ -134,12 +131,19 @@ Vagrant.configure("2") do |config|
     [ -f  $PYENV_PROFILE ] || \
       echo 'export PATH="/opt/pyenv/bin:$PATH"' >> $PYENV_PROFILE && \
       echo 'export PATH="/opt/pyenv/bin:$PATH"' >> /etc/zsh/zshenv
+  SHELL
 
-
+  config.vm.provision "shell", run: 'always', inline: <<-SHELL
+    # Load vcan module and bind a virtual can to vcan0
+    # https://stackoverflow.com/a/21040212
+    modprobe vcan
+    ip link add dev vcan0 type vcan
+    ip link set up vcan0
   SHELL
 
   config.vm.provision "docker" do |d|
 	 d.run "kuksa/kuksa.val",
-     args: "-v /kuksa:/config -p 127.0.0.1:8090:8090 -e LOG_LEVEL=ALL"
+     args: "-v /kuksa:/config -p 127.0.0.1:8090:8090 -e KUKSAVAL_OPTARGS='--insecure' -e LOG_LEVEL=ALL"
   end
+
 end
